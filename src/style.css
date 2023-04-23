@@ -1,0 +1,1361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root {
+   --color-primary: #7380ec;
+   --color-danger: #b65b10;
+   --color-succes: #41f1b6;
+   --color-warning: #ffbb55;
+   --color-white: #fff;
+   --color-info-dark: #7d8da1;
+   --color-info-light: #dce1eb;
+   --color-dark: #363949;
+   --color-light: rgba(132, 139, 200, 0.18);
+   --color-primary-variant: #111e88;
+   --color-dark-variant: #677483;
+   --color-background: #f6f6f9;
+   --color-text: black --card-border-raduis: 2rem;
+   --border-raduis-1: 0.4rem;
+   --border-raduis-2: 0.8rem;
+   --border-raduis-3: 1.2rem;
+   --card-padding: 1.8rem;
+   --padding-1: 1.2rem;
+   --button-color: transparent;
+   --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme {
+   --color-background: #181a1e;
+   --color-white: #202528;
+   --color-text: white;
+   --button-color: green;
+   --color-dark: #edeffd;
+   --color-dark-variant: #a3bdcc;
+   --color-light: rgba(0, 0, 0, 0.4);
+   --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   outline: 0;
+   appearance: none;
+   border: 0;
+   list-style: none;
+   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+   display: none;
+}
+
+html {
+   font-size: 14px;
+}
+
+body {
+   width: 100vw;
+   height: 100vh;
+   font-family: poppins, sans-serif;
+   font-size: 0.88rem;
+   user-select: none;
+   overflow-x: hidden;
+   background-color: var(--color-background);
+}
+
+.container {
+   display: grid;
+   width: 96%;
+   margin: 0 auto;
+   gap: 1.8rem;
+   grid-template-columns: 14rem auto 23rem;
+}
+
+.middle {
+   display: flex;
+   right: 50%;
+}
+
+a {
+   color: var(--color-dark);
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+
+h1 {
+   font-weight: 800;
+   font-size: 1.8rem;
+   color: var(--color-text);
+}
+
+h2 {
+   font-size: 1.4rem;
+   color: var(--color-text);
+}
+
+h3 {
+   font-size: 0.87rem;
+   color: var(--color-text);
+}
+
+h4 {
+   font-size: 0.8rem;
+   color: var(--color-text);
+}
+
+h5 {
+   font-size: 0.77rem;
+   color: var(--color-text);
+}
+
+small {
+   font-size: 0.75rem;
+}
+
+.profile-photo {
+   width: 2.8rem;
+   height: 2.8rem;
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.text-muted {
+   color: var(--color-info-dark)
+}
+
+p {
+   color: var(--color-dark-variant);
+}
+
+b {
+   color: var(--color-dark);
+}
+
+th {
+   color: var(--color-text);
+}
+
+.primary {
+   color: var(--color-primary);
+}
+
+.danger {
+   color: var(--color-danger);
+}
+
+.succes {
+   color: var(--color-succes);
+}
+
+.warning {
+   color: var(--color-warning);
+}
+
+aside {
+   height: 100vh;
+}
+
+aside .top {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 1.4rem;
+}
+
+aside .logo {
+   display: flex;
+   gap: 0.8rem;
+}
+
+aside .logo img {
+   width: 2rem;
+   height: 2rem;
+}
+
+aside .close {
+   display: none;
+}
+
+aside .sidebar {
+   display: flex;
+   flex-direction: column;
+   height: 86vh;
+   position: relative;
+   top: 3rem;
+}
+
+aside h3 {
+   font-weight: 500;
+}
+
+aside .sidebar a {
+   display: flex;
+   color: var(--color-info-dark);
+   margin-left: 2rem;
+   gap: 1rem;
+   text-decoration: none;
+   align-items: center;
+   position: relative;
+   height: 3.7rem;
+   transition: all 300ms ease;
+}
+
+aside .sidebar a span {
+   font-size: 1.6rem;
+   transition: all 300ms ease;
+}
+
+aside .sidebar a:last-child {
+   position: absolute;
+   bottom: 2rem;
+   width: 100%;
+}
+
+
+aside .sidebar a.active {
+   background: var(--color-light);
+   color: var(--color-primary);
+   margin-left: 0;
+}
+
+aside .sidebar a.active::before {
+   content: "";
+   width: 6px;
+   height: 100%;
+   background: var(--color-primary);
+}
+
+aside .sidebar a.active span {
+   color: var(--color-primary);
+   margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover {
+   color: var(--color-primary)
+}
+
+aside .sidebar a:hover span {
+   margin-left: 1rem;
+}
+/* ====================== Mian ================== */
+
+main {
+   margin-top: 1.4rem;
+}
+
+main .date {
+   display: inline-block;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   margin-top: 1rem;
+   padding: 0.5rem 1.6rem;
+}
+
+main .date input[type="date"] {
+   background: transparent;
+   color: var(--color-dark);
+}
+
+main .insights {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.6;
+}
+
+main .insights>div {
+   background: var(--color-white);
+   padding: var(--card-padding);
+   margin-right: 1.3rem;
+   border-radius: var(--card-border-raduis);
+   margin-top: 1rem;
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+}
+
+main .insights>div:hover {
+   box-shadow: none;
+}
+
+main .insights>div span {
+   background: rgb(19, 2, 2);
+   padding: 0.5rem;
+   border-radius: 50%;
+   color: white;
+   font-size: 2rem;
+}
+
+main .insights>div.users span {
+   background: var(--color-danger);
+}
+
+main .insights>div.discord-members span {
+   background: #738ADB;
+}
+/* ================= Orders ============*/
+
+main .order {
+   margin-top: 2rem;
+}
+
+main .order h2 {
+   margin-bottom: 0.8rem;
+}
+
+main .order table {
+   background: var(--color-white);
+   width: 100%;
+   border-radius: var(--card-border-raduis);
+   padding: var(--card-padding);
+   text-align: center;
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+}
+
+main .order table:hover {
+   box-shadow: none;
+}
+
+main .order table tbody {
+   background: var(--color-white);
+   border-radius: var(--card-border-raduis);
+   box-shadow: var(--box-shadow);
+}
+
+main table tbody td {
+   height: 3.9rem;
+   border-bottom: 1px solid var(--color-light);
+   color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td {
+   border: none;
+}
+
+main table tbody tr a {
+   text-decoration: none;
+}
+
+main table tbody tr h3 {
+   color: var(--color-dark);
+   border: 1px solid;
+   border-radius: 9px;
+   padding: 7px 19px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   box-shadow: var(--box-shadow);
+}
+
+main table tbody tr h3:hover {
+   margin-left: -1px;
+   box-shadow: none;
+}
+
+main table tbody tr h4 {
+   color: var(--color-dark);
+   border: 1px solid;
+   border-radius: 9px;
+   padding: 7px 19px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   box-shadow: var(--box-shadow);
+}
+
+main table tbody tr h4:hover {
+   margin-left: -1px;
+   box-shadow: none;
+}
+
+main table tbody tr h5 {
+   color: var(--color-dark);
+   border: 1px solid;
+   border-radius: 9px;
+   padding: 7px 19px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   box-shadow: var(--box-shadow);
+}
+
+main table tbody tr h5:hover {
+   margin-left: -1px;
+   box-shadow: none;
+}
+
+Menu {
+   display: block;
+   background: var(--color-white);
+   border-radius: 25px;
+   box-shadow: var(--box-shadow);
+   position: absolute;
+   width: 360px;
+   height: 280px;
+   right: 50%;
+   top: 25%;
+   z-index: 120;
+   border: 1px solid #181a1e;
+   animation: configmenu 0.7s;
+}
+
+configbot {
+   display: block;
+   content: "";
+   background: var(--color-white);
+   border-radius: 25px;
+   box-shadow: var(--box-shadow);
+   position: absolute;
+   overflow-y: auto;
+   width: 66%;
+   height: 73%;
+   right: 21%;
+   top: 9%;
+   z-index: 120;
+   border: 1px solid #181a1e;
+   animation: configbot 0.7s;
+}
+
+configmenu {
+   display: block;
+   content: "";
+   background: var(--color-white);
+   border-radius: 25px;
+   box-shadow: var(--box-shadow);
+   position: absolute;
+   overflow-y: auto;
+   width: 66%;
+   height: 73%;
+   right: 21%;
+   top: 9%;
+   z-index: 120;
+   border: 1px solid #181a1e;
+   animation: configmenu 0.7s;
+}
+
+.explosion table {
+   display: block;
+   margin-left: 6rem;
+   width: 100%;
+   border-radius: var(--card-border-raduis);
+   padding: var(--card-padding);
+   text-align: center;
+   transition: all 300ms ease;
+}
+
+.explosion table:hover {
+   box-shadow: none;
+}
+
+.explosion table tbody {
+   background: var(--color-white);
+   box-shadow: var(--box-shadow);
+   display: block;
+   height: 33rem;
+   width: 100%;
+   overflow-y: auto;
+   border-radius: var(--card-border-raduis);
+}
+
+.explosion table tbody::-webkit-scrollbar {
+   display: none;
+}
+
+.explosion table tbody td {
+   height: 3.9rem;
+   border-bottom: 1px solid var(--color-light);
+   color: var(--color-dark-variant);
+}
+
+.explosion table tbody tr:last-child td {
+   border: none;
+}
+
+.explosion table tbody tr a {
+   text-decoration: none;
+}
+
+.explosion table tbody tr h4:hover {
+   cursor: pointer;
+}
+
+.explosion table thead tr th {
+   padding: 0 7.2rem;
+}
+
+.explosion select {
+   position: relative;
+   margin-top: 0rem;
+   margin-left: 4rem;
+}
+
+.general {
+   display: none;
+}
+
+.tables {
+   overflow-y: hidden;
+   display: none;
+}
+
+.framework {
+   display: none;
+}
+
+configbot label {
+   left: 70rem;
+   position: absolute;
+}
+
+configbot h4 {
+   font-size: 1.1rem;
+   margin: 0;
+   margin-left: 3rem;
+   margin-top: 1rem;
+}
+
+configbot h5 {
+   font-size: 1.1rem;
+   margin: 0;
+   /* margin-left: 30rem; */
+   margin-top: 1rem;
+}
+
+configmenu label {
+   left: 70rem;
+   position: absolute;
+}
+
+configmenu h4 {
+   font-size: 1.1rem;
+   margin: 0;
+   margin-left: 3rem;
+   margin-top: 1rem;
+}
+
+configmenu h5 {
+   font-size: 1.1rem;
+   margin: 0;
+   /* margin-left: 30rem; */
+   margin-top: 1rem;
+}
+
+select {
+   display: block;
+   position: absolute;
+   z-index: 55555;
+   margin-left: 13.98rem;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: -2rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 11rem;
+   height: 2rem;
+}
+
+.option {
+   font-weight: bold !important;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   text-transform: uppercase;
+}
+
+.general h4 {
+   margin-bottom: 0.3rem;
+}
+
+.general2 h4 {
+   margin-bottom: 0.3rem;
+}
+
+.general2 {
+   display: none;
+   margin-left: 30%;
+   top: 5%;
+   position: absolute;
+}
+
+.general2 select {
+   display: block;
+   position: absolute;
+   z-index: 55555;
+   margin-left: 13.98rem;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: -2rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 11rem;
+   height: 2rem;
+}
+
+.general33 select {
+   display: block;
+   position: absolute;
+   z-index: 55555;
+   margin-left: 13.98rem;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: -2rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 11rem;
+   height: 2rem;
+}
+
+.general33 h4 {
+   margin-bottom: 0.3rem;
+}
+
+.general33 {
+   display: none;
+   margin-left: 60%;
+   top: 5%;
+   position: absolute;
+}
+
+@keyframes configbot {
+   0% {
+       transform: scale(1);
+   }
+   50% {
+       transform: scale(1.4);
+   }
+   60% {
+       transform: scale(1.1);
+   }
+   70% {
+       transform: scale(1.2);
+   }
+   80% {
+       transform: scale(1);
+   }
+   90% {
+       transform: scale(1.1);
+   }
+   100% {
+       transform: scale(1);
+   }
+}
+
+@keyframes configmenu {
+   0% {
+       transform: scale(1);
+   }
+   50% {
+       transform: scale(1.4);
+   }
+   60% {
+       transform: scale(1.1);
+   }
+   70% {
+       transform: scale(1.2);
+   }
+   80% {
+       transform: scale(1);
+   }
+   90% {
+       transform: scale(1.1);
+   }
+   100% {
+       transform: scale(1);
+   }
+}
+
+.explosion {
+   display: none;
+   position: absolute;
+}
+
+.text-cneter2 {
+   position: absolute;
+   border-radius: 12px;
+   box-shadow: var(--card-border-raduis);
+   width: 120px;
+   height: 30px;
+   background: #e2e2e970;
+   left: 45%;
+   top: 90%;
+}
+
+a chose {
+   font-size: 1.2rem;
+   text-decoration: none;
+   font-weight: 700;
+   margin-right: 3.5rem;
+   position: relative;
+   left: 3rem;
+   border: var(--border-raduis-1);
+   box-shadow: var(--box-shadow);
+   border-radius: var(--card-border-raduis);
+}
+
+.activeborder {
+   border-bottom: 2px solid #181a1e;
+}
+
+.submint1 {
+   font-weight: 900;
+   font-size: 1rem;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   color: var(--color-text);
+   border-radius: var(--border-raduis-1);
+   background: var(--button-color);
+}
+
+.submint1:hover {
+   cursor: pointer;
+}
+
+.text-cneter2:hover {
+   cursor: pointer;
+   border: none;
+}
+
+.my2-input {
+   /* margin-left: 29.98rem; */
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: 1rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 30rem;
+   height: 2rem;
+   /* padding: 0.5rem 7.6rem; */
+}
+
+.hahiw {
+   top: 3.1%;
+   right: 44px;
+   position: absolute;
+   width: fit-content;
+}
+
+.hiw {
+   top: 5.1%;
+   right: 44;
+   position: absolute;
+}
+
+.my-input {
+   margin-left: 2.98rem;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: 1rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   width: 30rem;
+   height: 2rem;
+   /* padding: 0.5rem 1.6rem; */
+}
+
+.my3-input {
+   margin-left: 2.98rem;
+   background: var(--color-light);
+   border-radius: var(--border-raduis-1);
+   color: var(--color-text);
+   margin-top: 1rem;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 0.5rem 1.6rem;
+}
+
+label {
+   font-weight: 800;
+   font-size: 1.8rem;
+   color: var(--color-text);
+   margin-left: 10rem;
+}
+
+menu span {
+   font-size: 1.3rem;
+   color: var(--color-text);
+}
+
+.text-cneter {
+   border-radius: 12px;
+   box-shadow: var(--card-border-raduis);
+   width: 120px;
+   height: 30px;
+   background: #e2e2e970;
+   margin-top: 1.5rem;
+   margin-left: 8rem;
+}
+
+.submint {
+   font-weight: 900;
+   font-size: 1rem;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   color: var(--color-text);
+   background: transparent;
+}
+
+.submint:hover {
+   cursor: pointer;
+}
+
+.text-cneter:hover {
+   cursor: pointer;
+   border: none;
+}
+
+menu h4 {
+   margin-left: 1.5rem;
+   margin-top: 2.5rem;
+   font-weight: 800;
+   font-size: 1.1rem;
+}
+/* ======================= Right =======================*/
+
+.right {
+   margin-top: 1.4rem;
+}
+
+.right .top {
+   display: flex;
+   justify-content: end;
+   gap: 2rem;
+}
+
+.right .top button {
+   display: none;
+}
+
+.right .theme-toggler {
+   background: var(--color-light);
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 1.6rem;
+   width: 4.2rem;
+   cursor: pointer;
+   border-radius: var(--border-raduis-1);
+}
+
+.right .theme-toggler span {
+   font-size: 1.2rem;
+   color: var(--color-text);
+   width: 50%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.right .theme-toggler span.active {
+   background-color: var(--color-primary);
+   color: white;
+   border-radius: var(--border-raduis-1);
+}
+
+.right .top .profile {
+   display: flex;
+   gap: 2rem;
+   text-align: right;
+}
+
+.right .recent-updates {
+   margin-top: 1rem;
+}
+
+.right .recent-updates h2 {
+   margin-bottom: 0.8rem;
+}
+
+.right .recent-updates .updates {
+   background: var(--color-white);
+   padding: var(--card-padding);
+   border-radius: var(--card-border-raduis);
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+}
+
+.right .recent-updates .updates:hover {
+   box-shadow: none;
+}
+
+.right .recent-updates .updates .update {
+   display: grid;
+   grid-template-columns: 2.6rem auto;
+   gap: 1rem;
+   margin-bottom: 1rem;
+}
+/* ===================== MEDIA SCREEN =================*/
+
+@media screen and (max-width: 1400px) {
+   configmenu {
+       height: 85%;
+   }
+   .hahiw {
+       top: 460px;
+       left: 5%;
+   }
+   .text-cneter2 {
+       bottom: 1%;
+   }
+   .general2 {
+       left: 30%;
+       top: 4%;
+       margin-right: 2rem;
+   }
+   .general33 {
+       top: 54%;
+       right: 82.6%;
+       margin-left: 2rem;
+   }
+   .text-cneter2 {
+       top: 118%;
+   }
+}
+
+@media screen and (max-width: 1330px) {
+   configmenu {
+       height: 85%;
+   }
+   .general2 {
+       top: 100%;
+       left: -30%;
+   }
+   .general33 {
+       top: 58%;
+       right: auto;
+       margin-left: 0;
+   }
+   .text-cneter2 {
+       top: 150%;
+   }
+}
+
+@media screen and (max-width: 900px) {
+   configmenu {
+       width: 95%;
+       height: 90%;
+       left: 6%;
+   }
+}
+
+@media screen and (max-width: 1200px) {
+   .container {
+       width: 94%;
+       grid-template-columns: 7rem auto 23rem;
+   }
+   aside .logo h2 {
+       display: none;
+   }
+   aside .sidebar h3 {
+       display: none;
+   }
+   aside .sidebar a {
+       width: 5.6rem;
+   }
+   aside .sidebar a:last-child {
+       position: relative;
+       margin-top: 1.8rem;
+   }
+   main .insights {
+       grid-template-columns: 1fr;
+       gap: 0;
+   }
+   main .order {
+       width: 94%;
+       position: absolute;
+       /* left: 50%; */
+       transform: translateX(-50px);
+       margin: 2rem 0 0 0.8rem;
+   }
+   main .order table {
+       width: 83vw;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .container {
+       width: 100%;
+       grid-template-columns: 1fr;
+   }
+   aside {
+       position: fixed;
+       left: -100%;
+       background: var(--color-white);
+       width: 18rem;
+       z-index: 3;
+       box-shadow: 1rem 3rem 4rem var(--color-light);
+       height: 100vh;
+       padding-right: var(--card-padding);
+       display: none;
+       animation: showMenu 400ms ease forwards;
+   }
+   @keyframes showMenu {
+       to {
+           left: 0;
+       }
+   }
+   aside .logo {
+       margin-left: 1rem;
+   }
+   aside .logo h2 {
+       display: inline;
+   }
+   aside .sidebar h3 {
+       display: inline;
+   }
+   aside .sidebar a {
+       width: 100%;
+       height: 3.4rem;
+   }
+   aside .sidebar a:last-child {
+       position: absolute;
+       bottom: 5rem;
+   }
+   aside .close {
+       display: inline-block;
+       cursor: pointer;
+   }
+   main {
+       margin-top: 8rem;
+       padding: 0 1rem;
+   }
+   main .order {
+       position: relative;
+       margin: 3rem 0 0 3rem;
+       width: 100%;
+   }
+   main table tbody tr h4 {
+       padding: 1px 1px;
+       font-size: 6px;
+   }
+   main table tbody tr h3 {
+       padding: 1px 1px;
+       font-size: 6px;
+   }
+   Menu {
+       right: 3%;
+   }
+   main .order table {
+       width: 100%;
+       margin: 0;
+   }
+   .right {
+       width: 94%;
+       margin: 0 auto 4rem;
+   }
+   .right .top {
+       position: fixed;
+       top: 0;
+       left: 0;
+       align-items: center;
+       padding: 0 0.8rem;
+       height: 4.6rem;
+       background: var(--color-white);
+       width: 100%;
+       margin: 0;
+       z-index: 2;
+       box-shadow: 0 1rem 1rem var(--color-light);
+   }
+   .right .top .theme-toggler {
+       width: 4.4rem;
+       position: absolute;
+       left: 66%;
+   }
+   .right .profile .info {
+       display: none;
+   }
+   .right .top button {
+       display: inline-block;
+       background: transparent;
+       cursor: pointer;
+       color: var(--color-dark);
+       position: absolute;
+       left: 1rem;
+   }
+   .right .top button span {
+       font-size: 2rem;
+   }
+}
+
+.tables table {
+   background: var(--color-white);
+   width: 35rem;
+   border-radius: var(--card-border-raduis);
+   padding: var(--card-padding);
+   text-align: center;
+   transition: all 300ms ease;
+}
+
+.tables table:hover {
+   box-shadow: none;
+}
+
+.tables table tbody {
+   background: var(--color-white);
+   border-radius: var(--card-border-raduis);
+   /* box-shadow: var(--box-shadow); */
+}
+
+.tables table tbody td {
+   height: 3.9rem;
+   border-bottom: 1px solid var(--color-light);
+   color: var(--color-dark-variant);
+}
+
+.tables table tbody tr:last-child td {
+   border: none;
+}
+
+.tables table tbody tr a {
+   text-decoration: none;
+}
+
+.tables table tbody tr h3 {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 11px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.tables table tbody tr h4 {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 11px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.tables table tbody tr h4:hover {
+   cursor: pointer;
+}
+
+.delete {
+   text-align: center;
+}
+
+.delete a {
+   color: var(--color-dark-variant);
+   background: var(--color-white);
+   padding: 1px 6px;
+   border-radius: var(--card-border-raduis);
+   text-decoration: none;
+}
+
+.add_btn {
+   height: 29px;
+   background: var(--button-color);
+   color: var(--color-text);
+   border: 2px solid var(--button-color);
+   border-radius: 5px;
+   padding: 5px 10px;
+}
+
+@media screen and (max-width: 500px) {
+   .container {
+       width: 100%;
+       grid-template-columns: 1fr;
+   }
+   aside {
+       position: fixed;
+       left: -100%;
+       background: var(--color-white);
+       width: 18rem;
+       z-index: 3;
+       box-shadow: 1rem 3rem 4rem var(--color-light);
+       height: 100vh;
+       padding-right: var(--card-padding);
+       display: none;
+       animation: showMenu 400ms ease forwards;
+   }
+   @keyframes showMenu {
+       to {
+           left: 0;
+       }
+   }
+   aside .logo {
+       margin-left: 1rem;
+   }
+   aside .logo h2 {
+       display: inline;
+   }
+   aside .sidebar h3 {
+       display: inline;
+   }
+   aside .sidebar a {
+       width: 100%;
+       height: 3.4rem;
+   }
+   aside .sidebar a:last-child {
+       position: absolute;
+       bottom: 5rem;
+   }
+   aside .close {
+       display: inline-block;
+       cursor: pointer;
+   }
+   main {
+       margin-top: 8rem;
+       padding: 0 1rem;
+   }
+   main .order {
+       position: relative;
+       margin: 3rem 0 0 3rem;
+       width: 100%;
+   }
+   main table tbody tr h4 {
+       padding: 1px 1px;
+       font-size: 6px;
+   }
+   main table tbody tr h3 {
+       padding: 1px 1px;
+       font-size: 6px;
+   }
+   Menu {
+       right: 3%;
+   }
+   main .order table {
+       width: 100%;
+       margin: 0;
+   }
+   .right {
+       width: 94%;
+       margin: 0 auto 4rem;
+   }
+   .right .top {
+       position: fixed;
+       top: 0;
+       left: 0;
+       align-items: center;
+       padding: 0 0.8rem;
+       height: 4.6rem;
+       background: var(--color-white);
+       width: 100%;
+       margin: 0;
+       z-index: 2;
+       box-shadow: 0 1rem 1rem var(--color-light);
+   }
+   .right .top .theme-toggler {
+       width: 4.4rem;
+       position: absolute;
+       left: 66%;
+   }
+   .right .profile .info {
+       display: none;
+   }
+   .right .top button {
+       display: inline-block;
+       background: transparent;
+       cursor: pointer;
+       color: var(--color-dark);
+       position: absolute;
+       left: 1rem;
+   }
+   .right .top button span {
+       font-size: 2rem;
+   }
+}
+
+.tables table {
+   background: var(--color-white);
+   width: 35rem;
+   border-radius: var(--card-border-raduis);
+   padding: var(--card-padding);
+   text-align: center;
+   transition: all 300ms ease;
+}
+
+.tables table:hover {
+   box-shadow: none;
+}
+
+.tables table tbody {
+   background: var(--color-white);
+   border-radius: var(--card-border-raduis);
+   /* box-shadow: var(--box-shadow); */
+}
+
+.tables table tbody td {
+   height: 3.9rem;
+   border-bottom: 1px solid var(--color-light);
+   color: var(--color-dark-variant);
+}
+
+.tables table tbody tr:last-child td {
+   border: none;
+}
+
+.tables table tbody tr a {
+   text-decoration: none;
+}
+
+.tables table tbody tr h3 {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 11px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.tables table tbody tr h4 {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 11px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+}
+
+.tables table tbody tr h4:hover {
+   cursor: pointer;
+}
+
+.delete {
+   text-align: center;
+}
+
+.delete a {
+   color: var(--color-dark-variant);
+   background: var(--color-white);
+   padding: 1px 6px;
+   border-radius: var(--card-border-raduis);
+   text-decoration: none;
+}
+
+.add_btn {
+   height: 29px;
+   background: var(--button-color);
+   color: var(--color-text);
+   border: 2px solid var(--button-color);
+   border-radius: 5px;
+   padding: 5px 10px;
+}
