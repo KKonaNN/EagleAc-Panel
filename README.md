@@ -1,5 +1,6 @@
 ps : this is only the part i can see, i bet there is more pages for customers, i can add them if u have access <3
 
+DISCORD : KonaN#6133
 
 To avoid any confusion or concerns, please note that the panel you created is not leaked or hacked. It was created based on a panel that was seen online.
 
